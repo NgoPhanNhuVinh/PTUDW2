@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyClass.Model
+{
+    //khai bao ten bang
+    [Table("Posts")]
+    public class Posts
+    {
+        // khai bao truong, khoa chinh
+        [Key]
+        public int Id { get; set; }
+        // khong dc null
+        public int? TopId { get; set; }
+        
+        public string Slug { get; set; }
+        public string Title { get; set; }
+
+        public string Detail { get; set; }
+       
+        public string Image { get; set; }
+    
+        public string PostType { get; set; }
+        [Required]
+        public int CreateBy { get; set; }
+        [Required]
+        public DateTime CreateAt { get; set; }
+        [Required]
+        public int UpdateBy { get; set; }
+
+        [Required]
+        public DateTime UpdateByAt { get; set; }
+        [Required]
+        public int Status { get; set; }
+    }
+}
