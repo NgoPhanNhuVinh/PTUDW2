@@ -33,7 +33,7 @@ namespace MyClass.Model
         public int UpdateBy { get; set; }
 
         [Required]
-        public DateTime UpdateByAt { get; set; }
+        public DateTime UpdatAt { get; set; }
         [Required]
         public int Status { get; set; }
     }

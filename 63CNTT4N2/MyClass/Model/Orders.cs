@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyClass.Model
-{//chua xong
+{
     //khai bao ten bang
     [Table("Orders")]
     public class Orders
@@ -19,13 +19,8 @@ namespace MyClass.Model
         public int UserID { get; set; }
         [Required]
         public string ReceiverAddress { get; set; }
-        public int? Note { get; set; }
+        public string Note { get; set; }
 
-        public int? Order { get; set; }
-        [Required]
-        public string MetaDesc { get; set; }
-        [Required]
-        public string MetaKey { get; set; }
         [Required]
         public int CreateBy { get; set; }
         [Required]
@@ -34,7 +29,7 @@ namespace MyClass.Model
         public int UpdateBy { get; set; }
 
         [Required]
-        public DateTime UpdateByAt { get; set; }
+        public DateTime UpdateAt { get; set; }
         [Required]
         public int Status { get; set; }
     }

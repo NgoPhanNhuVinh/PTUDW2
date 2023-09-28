@@ -17,7 +17,9 @@ namespace MyClass.Model
         public int Id { get; set; }
         [Required]// khong dc null
         public string Name { get; set; }
+
         public int? TableId { get; set; }
+
         public string TypeMenu { get; set; }
 
         public string Position { get; set; }
@@ -27,14 +29,17 @@ namespace MyClass.Model
         public int? Parentid { get; set; }
 
         public int? Order { get; set; }
-
+        [Required]
         public int CreateBy { get; set; }
-
+        [Required]
         public DateTime CreateAt { get; set; }
 
-
+        [Required]
         public int UpdateBy { get; set; }
+        [Required]
+        public DateTime UpdateAt { get; set; }
 
+        [Required]
         public int Status { get; set; }
     }
 }

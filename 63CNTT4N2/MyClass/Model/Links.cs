@@ -15,26 +15,16 @@ namespace MyClass.Model
         // khai bao truong, khoa chinh
         [Key]
         public int Id { get; set; }
-        [Required]// khong dc null
+        // khong dc null
         public string Name { get; set; }
+
+        public string Slug { get; set; }
+
+        [Required]
         public int? TableId { get; set; }
-        public string TypeMenu { get; set; }
 
-        public string Position { get; set; }
-        
-        public string Link { get; set; }
-       
-        public int? Parentid { get; set; }
-        
-        public int? Order { get; set; }
-       
-        public int CreateBy { get; set; }
-        
-        public DateTime CreateAt { get; set; }
+        public string Type { get; set; }
 
-        
-        public int UpdateBy { get; set; }
        
-        public int Status { get; set; }
     }
 }

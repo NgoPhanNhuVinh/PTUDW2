@@ -23,7 +23,7 @@ namespace MyClass.Model
         public string FullName { get; set; }
         [Required]
         public string Email { get; set; }
-        
+        [Required]
         public string Phone { get; set; }
        
         public string Img { get; set; }
@@ -31,15 +31,14 @@ namespace MyClass.Model
         public string Gender { get; set; }
         [Required]
         public string Role { get; set; }
-        [Required]
+    
         public string Address { get; set; }
-
-        
+       
         public DateTime CreateAt { get; set; }
        
         public int? CreateBy { get; set; }
 
-        public DateTime UpdateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
 
         public int? UpdateBy { get; set; }
 

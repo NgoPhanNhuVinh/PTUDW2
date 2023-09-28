@@ -15,16 +15,19 @@ namespace MyClass.Model
         // khai bao truong, khoa chinh
         [Key]
         public int Id { get; set; }
+
         [Required]
         public int OrderId { get; set; }
+
         [Required]
         public int ProductId { get; set; }
+
         [Required]
         public decimal Price { get; set; }
-        [Required]
 
+        [Required]
         public decimal Amaout{ get; set; }
 
-        public int Status { get; set; }
+        
     }
 }

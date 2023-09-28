@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyClass.Model
-{//chua xong
+{
     //khai bao ten bang
     [Table("Sliders")]
     public class Sliders
@@ -30,7 +30,7 @@ namespace MyClass.Model
         [Required]
         public DateTime CreateAt { get; set; }
         [Required]
-        public DateTime CreateBy { get; set; }
+        public int CreateBy { get; set; }
         [Required]
         public int UpdateBy { get; set; }
 

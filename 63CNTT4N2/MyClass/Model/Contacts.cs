@@ -6,12 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyClass.Model
-{
+
  
 
 namespace MyClass.Model
-    {
+{
         //khai bao ten bang
         [Table("Contacts")]
         public class Contacts
@@ -19,11 +18,12 @@ namespace MyClass.Model
             // khai bao truong, khoa chinh
             [Key]
             public int Id { get; set; }
+
             [Required]// khong dc null
-            public int UserId { get; set; }
+            public int UserID { get; set; }
             
             public string FullName { get; set; }
-            
+             
             public string Phone { get; set; }
 
             public string Email { get; set; }
@@ -32,18 +32,16 @@ namespace MyClass.Model
             [Required]
             public string Detail { get; set; }
             [Required]
-            public int CreateBy { get; set; }
-            [Required]
             public DateTime CreateAt { get; set; }
             [Required]
-           
+             public int UpdateBy { get; set; }
 
-            
-            public DateTime UpdateByAt { get; set; }
+            [Required]        
+            public DateTime UpdateAt { get; set; }
             [Required]
             public int Status { get; set; }
         }
-    }
-
 }
+
+
 

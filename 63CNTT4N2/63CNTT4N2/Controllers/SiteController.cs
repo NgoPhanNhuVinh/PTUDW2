@@ -13,7 +13,7 @@ namespace _63CNTT4N2.Controllers
         {
             
             MyDBContext db = new MyDBContext();//tao moi database
-            int sodong = db.Contacts.Count();
+            int sodong = db.Products.Count();
             ViewBag.sodong = sodong;
             return View();
         }
