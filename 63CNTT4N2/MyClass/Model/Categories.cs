@@ -8,33 +8,52 @@ using System.Threading.Tasks;
 
 namespace MyClass.Model
 {
-    //khai bao ten bang
     [Table("Categories")]
     public class Categories
     {
-        // khai bao truong, khoa chinh
         [Key]
-        public int  Id { get; set; }
-        [Required]// khong dc null
+        public int Id { get; set; }
+
+        [Display(Name = "Tên loại hàng")]
+        [Required(ErrorMessage = "Tên loại sản phẩm không được để trống")]
         public string Name { get; set; }
+
+        [Display(Name = "Tên rút gọn")]
         public string Slug { get; set; }
+
+        [Display(Name = "Cấp cha")]
         public int? ParentId { get; set; }
 
+        [Display(Name = "Sắp xếp")]
         public int? Order { get; set; }
-        [Required]
+
+        [Display(Name = "Mô tả")]
+        [Required(ErrorMessage = "Mô tả không được để trống")]
         public string MetaDesc { get; set; }
-        [Required]
+
+        [Display(Name = "Từ khóa")]
+        [Required(ErrorMessage = "Từ khóa không được để trống")]
         public string MetaKey { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Người tạo không được để trống")]
+        [Display(Name = "Người tạo")]
         public int CreateBy { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Ngày tạo không được để trống")]
+        [Display(Name = "Ngày tạo")]
         public DateTime CreateAt { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Người cập nhật không được để trống")]
+        [Display(Name = "Người cập nhật")]
         public int UpdateBy { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Ngày cập nhật không được để trống")]
+        [Display(Name = "Ngày cập nhật")]
         public DateTime UpdateByAt { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Trạng thái không được để trống")]
+        [Display(Name = "Trạng thái")]
         public int Status { get; set; }
+
     }
 }

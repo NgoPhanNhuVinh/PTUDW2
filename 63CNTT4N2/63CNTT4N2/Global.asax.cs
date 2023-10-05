@@ -17,5 +17,10 @@ namespace _63CNTT4N2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        //tao moi session
+        protected void Session_Start()
+        {
+            Session["UserID"] = "1";
+        }
     }
 }
