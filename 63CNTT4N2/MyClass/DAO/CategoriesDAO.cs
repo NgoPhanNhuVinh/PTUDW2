@@ -78,6 +78,11 @@ namespace MyClass.DAO
             db.Entry(row).State = EntityState.Modified;
             return db.SaveChanges();
         }
-
+        //xoa mau tin
+        public  int Delete(Categories row)
+        {
+            db.Categories.Remove(row);
+            return db.SaveChanges();
+        }
     }
 }

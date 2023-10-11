@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using MyClass.Model;
 using MyClass.DAO;
 
-namespace _63CNTT4N1.Areas.Admin.Controllers
+namespace _63CNTT4N2.Areas.Admin.Controllers
 {
     public class CategoriesController : Controller
     {
@@ -67,7 +67,17 @@ namespace _63CNTT4N1.Areas.Admin.Controllers
 
             return View(categories);
         }
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Categories categories)
+        {
+           if(ModelState.IsValid)
+            {
+                categoriesDAO.Update(categories);
+                return RedirectToAction("Index");
+            }
+           return View(categories);
+        }
         //    //-------------------------------------------------------------------------------
         //    // GET: Admin/Categories/Edit/5
         //    public ActionResult Edit(int? id)
@@ -99,30 +109,32 @@ namespace _63CNTT4N1.Areas.Admin.Controllers
 
         //    //-------------------------------------------------------------------------------
         //    // GET: Admin/Categories/Delete/5
-        //    public ActionResult Delete(int? id)
-        //    {
-        //        if (id == null)
-        //        {
-        //            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //        }
-        //        Categories categories = db.Categories.Find(id);
-        //        if (categories == null)
-        //        {
-        //            return HttpNotFound();
-        //        }
-        //        return View(categories);
-        //    }
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Categories categories = categoriesDAO.getRow(id);
+            if (categories == null)
+            {
+                return HttpNotFound();
+            }
+            return View(categories);
+        }
 
         //    // POST: Admin/Categories/Delete/5
-        //    [HttpPost, ActionName("Delete")]
-        //    [ValidateAntiForgeryToken]
-        //    public ActionResult DeleteConfirmed(int id)
-        //    {
-        //        Categories categories = db.Categories.Find(id);
-        //        db.Categories.Remove(categories);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Categories categories = categoriesDAO.getRow(id);
+            //db.Categories.Remove(categories);
+            //db.SaveChanges();
+            categoriesDAO.Delete(categories);
+          
+            return RedirectToAction("Index");
+        }
     }
 }
+
