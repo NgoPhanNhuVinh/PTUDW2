@@ -15,37 +15,58 @@ namespace MyClass.Model
         // khai bao truong, khoa chinh
         [Key]
         public int Id { get; set; }
-        [Required]// khong dc null
+        [Required(ErrorMessage ="Ten khong duoc de trong")]// khong dc null
+        [Display(Name = "Tên nha cung cap ")]
         public string Name { get; set; }
 
+        [Display(Name = "Hinh anh ")]
         public string Image { get; set; }
 
+        [Display(Name = "Link rut gon")]
         public string Slug { get; set; }
 
+        [Display(Name = "Sap xep ")]
         public int? Order { get; set; }
-        
+
+        [Display(Name = "Ten day du")]
         public string FullName { get; set; }
         [Required]
+        [Display(Name = "So dien thoai")]
         public string Phone { get; set; }
         [Required]
+        [Display(Name = "Email")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Ten khong duoc de trong")]
+        [Display(Name = "Mo ta")]
         public string UrlSite { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mo ta khong duoc de trong")]
+        [Display(Name = "Mo ta")]
         public string MetaDesc { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Tu khoa khong duoc de trong")]
+        [Display(Name = "Tu khoa")]
         public string MetaKey { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Nguoi tao khong duoc de trong")]
+        [Display(Name = "Nguoi tao")]
         public DateTime CreateAt { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Ten khong duoc de trong")]
+        [Display(Name = "So dien thoai")]
         public int CreateBy { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "Nguoi cap nhap khong duoc de trong")]
+        [Display(Name = "Cap nhap")]
         public int UpdateBy { get; set; }
 
-        [Required]
+
+        [Required(ErrorMessage = "Ngay cap nhap khong duoc de trong")]
+        [Display(Name = "Cap nhap ")]
         public DateTime UpdateAt { get; set; }
-        [Required]
-        public int Status { get; set; }
+      
+        [Display(Name = "So dien thoai")]
+        public int? Status { get; set; }// cho phep null
     }
 }
