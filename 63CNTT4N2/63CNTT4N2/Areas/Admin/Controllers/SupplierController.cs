@@ -86,7 +86,7 @@ namespace _63CNTT4N2.Areas.Admin.Controllers
                     {
                         string slug = suppliers.Slug;
                         //ten file = Slug + phan mo rong cua tap tin
-                        string imgName = slug + img.FileName.Substring(img.FileName.LastIndexOf("."));
+                        string imgName = slug + "_" + suppliers.Id + img.FileName.Substring(img.FileName.LastIndexOf("."));
                         suppliers.Image = imgName;
                         //upload hinh
                         string PathDir = "~/Public/img/supplier/";
@@ -188,7 +188,7 @@ namespace _63CNTT4N2.Areas.Admin.Controllers
             Suppliers suppliers = suppliersDAO.getRow(id);
             suppliersDAO.Delete(suppliers);
             //hien thi thong bao thanh cong
-            TempData["message"] = new XMessage("success", "Cập nhật thông tin thành công");
+            TempData["message"] = new XMessage("success", "Xoa thông tin thành công");
             return RedirectToAction("Trash");
         }
 

@@ -37,7 +37,7 @@ namespace MyClass.Model
         [Display(Name = "Email")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Ten khong duoc de trong")]
-        [Display(Name = "Mo ta")]
+        [Display(Name = "Lien ket")]
         public string UrlSite { get; set; }
 
         [Required(ErrorMessage = "Mo ta khong duoc de trong")]
@@ -49,24 +49,24 @@ namespace MyClass.Model
         public string MetaKey { get; set; }
 
         [Required(ErrorMessage = "Nguoi tao khong duoc de trong")]
-        [Display(Name = "Nguoi tao")]
+        [Display(Name = "Ngay tao")]
         public DateTime CreateAt { get; set; }
 
         [Required(ErrorMessage = "Ten khong duoc de trong")]
-        [Display(Name = "So dien thoai")]
+        [Display(Name = "Nguoi tao")]
         public int CreateBy { get; set; }
 
 
         [Required(ErrorMessage = "Nguoi cap nhap khong duoc de trong")]
-        [Display(Name = "Cap nhap")]
+        [Display(Name = "Nguoi Cap nhap")]
         public int UpdateBy { get; set; }
 
 
         [Required(ErrorMessage = "Ngay cap nhap khong duoc de trong")]
-        [Display(Name = "Cap nhap ")]
+        [Display(Name = "Ngay Cap nhap ")]
         public DateTime UpdateAt { get; set; }
       
-        [Display(Name = "So dien thoai")]
+        [Display(Name = "Trang thai")]
         public int? Status { get; set; }// cho phep null
     }
 }

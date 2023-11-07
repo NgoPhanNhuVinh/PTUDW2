@@ -56,6 +56,7 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
+                                    @*<td><input type="checkbox" name="checkid" value="" /></td>*@
                                     <td>@Html.DisplayFor(modelItem => item.Id)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Slug)</td>
@@ -63,7 +64,7 @@
                                     <td>@Html.DisplayFor(modelItem => item.Order)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Phone)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                                    <td><img src="~/Public/img/supplier/@item.Image" alt="Img" class="img-fluid" /></td>
+                                    <td><img src="~/Public/img/supplier/@item.Image" alt="Image" class="img-fluid" /></td>
                                     <td>
                                         @if (item.Status == 1)
                                         {
