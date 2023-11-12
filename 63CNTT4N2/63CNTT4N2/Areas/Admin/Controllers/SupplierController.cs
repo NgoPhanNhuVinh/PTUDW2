@@ -186,7 +186,18 @@ namespace _63CNTT4N2.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Suppliers suppliers = suppliersDAO.getRow(id);
-            suppliersDAO.Delete(suppliers);
+            //tim va xoa anh cua nha cung cap
+            if (suppliersDAO.Delete(suppliers) == 1)
+            {
+                string PathDir = "~/Public/img/supplier";
+                if (suppliers.Image != null)
+                {
+                    string DelPath = Path.Combine(Server.MapPath(PathDir), suppliers.Image);
+                    System.IO.File.Delete(DelPath);
+                }//ket thuc phan upload hinh anh
+            }
+          
+            
             //hien thi thong bao thanh cong
             TempData["message"] = new XMessage("success", "Xoa thông tin thành công");
             return RedirectToAction("Trash");

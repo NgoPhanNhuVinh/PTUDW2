@@ -6,134 +6,204 @@
 }
 
 <h2>Details</h2>
+<div class="wrapper">
+    <!-- Main Sidebar Container -->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
 
-<div>
-    <h4>Suppliers</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <!-- Default box -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong class="text-danger">DANH MUC NHA SAN XUAT</strong>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="@Url.Action("Edit", "Supplier", new { id = Model.Id })" class="btn-sm btn-success"><i class="fa fa-edit">Sua</i></a>
+                            <a href="@Url.Action("Index", "Supplier")" class="btn-sm btn-info"><i class="fa fa-long-arrow-alt-left">quay lai</i></a>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped" id="myTable">
+                        <thead>
+                            <tr>
+                                <th> @Html.DisplayNameFor(model => model.Id)</th>
+                                <th> @Html.DisplayNameFor(model => model.Name)</th>
+                                <th> @Html.DisplayNameFor(model => model.Image)</th>
+                                <th> @Html.DisplayNameFor(model => model.Slug)</th>
+                                <th> @Html.DisplayNameFor(model => model.Order)</th>
+                                <th> @Html.DisplayNameFor(model => model.FullName)</th>
+                                <th> @Html.DisplayNameFor(model => model.Phone)</th>
+                                <th> @Html.DisplayNameFor(model => model.Email)</th>
+                                <th> @Html.DisplayNameFor(model => model.UrlSite)</th>
+                                <th> @Html.DisplayNameFor(model => model.MetaDesc)</th>
+                                <th> @Html.DisplayNameFor(model => model.MetaKey)</th>
+                                <th> @Html.DisplayNameFor(model => model.CreateAt)</th>
+                                <th> @Html.DisplayNameFor(model => model.CreateBy)</th>
+                                <th> @Html.DisplayNameFor(model => model.UpdateBy)</th>
+                                <th> @Html.DisplayNameFor(model => model.UpdateAt)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> @Html.DisplayFor(model => Model.Id)</td>
+                                <td> @Html.DisplayFor(model => model.Name) </td>
+                                <td> @Html.DisplayFor(model => model.Image) </td>
+                                <td> @Html.DisplayFor(model => model.Slug)</td>
+                                <td> @Html.DisplayFor(model => model.Order) </td>
+                                <td> @Html.DisplayFor(model => model.FullName) </td>
+                                <td> @Html.DisplayFor(model => model.Phone) </td>
+                                <td> @Html.DisplayFor(model => model.Email) </td>
+                                <td> @Html.DisplayFor(model => model.UrlSite) </td>
+                                <td> @Html.DisplayFor(model => model.MetaDesc) </td>
+                                <td> @Html.DisplayFor(model => model.MetaKey) </td>
+                                <td> @Html.DisplayFor(model => model.CreateAt) </td>
+                                <td> @Html.DisplayFor(model => model.CreateBy) </td>
+                                <td> @Html.DisplayFor(model => model.UpdateAt) </td>
+                                <td> @Html.DisplayFor(model => model.UpdateBy) </td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
+                            </tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
+                        </tbody>
 
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
+                    </table>
+                </div> <!-- /.card-footer-->
+            </div><!-- /.card -->
+        </section><!-- /.content -->
+    </div> <!-- /.content-wrapper -->
+</div><!-- ./wrapper -->
+@*<div>
+        <h4>Suppliers</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Order)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Order)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FullName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FullName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Slug)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Slug)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Order)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Order)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UrlSite)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UrlSite)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaDesc)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaDesc)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MetaKey)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MetaKey)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UrlSite)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateAt)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UrlSite)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreateAt)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MetaDesc)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreateBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MetaDesc)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreateBy)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MetaKey)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdateBy)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MetaKey)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UpdateBy)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateAt)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdateAt)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreateAt)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UpdateAt)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateBy)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreateBy)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateBy)
+            </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dd>
+                @Html.DisplayFor(model => model.UpdateBy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateAt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UpdateAt)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

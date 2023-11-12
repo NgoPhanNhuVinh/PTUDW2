@@ -15,39 +15,63 @@ namespace MyClass.Model
         // khai bao truong, khoa chinh
         [Key]
         public int Id { get; set; }
-        [Required]// khong dc null
-        public int CatID { get; set; }
-        [Required]
-        public string Name { get; set; }
-        public string Supplier { get; set; }
 
+        [Display(Name = "Loai san pham")]
+        [Required(ErrorMessage = "loai sản phẩm không được để trống")]
+        public int CatID { get; set; }
+        [Display(Name = "Tên SAN PHAM")]
+        [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
+        public string Name { get; set; }
+
+        [Display(Name = "Ma nha cung cap")]
+        [Required(ErrorMessage = "nha cung cap không được để trống")]
+        public int SupplierID { get; set; }
+
+        [Display (Name="Ten rut gon")]
         public string Slug { get; set; }
-        [Required]
-        public string Detail { get; set; }
-       
+
+        [Display(Name = "Hinh anh")]
         public string Image { get; set; }
-        [Required]
+
+        [Display(Name = "gia san pham")]
+        [Required(ErrorMessage = "gia san pham không được để trống")]
         public decimal Price { get; set; }
-   
+
+        [Display(Name = "gia ban")]
+        [Required(ErrorMessage = "gia ban không được để trống")]
+
         public decimal SalePrice { get; set; }
-        [Required]
+
+        [Display(Name = "So luong")]
+        [Required(ErrorMessage = "so luong không được để trống")]
         public int Amout { get; set; }
 
-        [Required]
+        [Display(Name = "Mo ta")]
+        [Required(ErrorMessage = "mo ta không được để trống")]
         public string MetaDesc { get; set; }
 
-        [Required]
+        [Display(Name = "Tu khoa")]
+        [Required(ErrorMessage = "tu khoa không được để trống")]
         public string MetaKey { get; set; }
-        [Required]
+
+        [Display(Name = "Nguoi tao")]
+        [Required(ErrorMessage = "nguoi tao không được để trống")]
         public int CreateBy { get; set; }
-        [Required]
+
+        [Display(Name = "Ngay tao")]
+        [Required(ErrorMessage = "ngay taokhông được để trống")]
         public DateTime CreateAt { get; set; }
-        [Required]
+
+        [Display(Name = "Nguoi cap nhap")]
+        [Required(ErrorMessage = "Nguoi cap nhap không được để trống")]
         public int UpdateBy { get; set; }
-        [Required]
+
+        [Display(Name = "Ngay cap nhap")]
+        [Required(ErrorMessage = "ngay cap nhap không được để trống")]
         public DateTime UpdateAt { get; set; }
-        [Required]
-        public int Status { get; set; }
+
+        [Display(Name="Trang thai")]
+        public int? Status { get; set; }
 
     }
 }
