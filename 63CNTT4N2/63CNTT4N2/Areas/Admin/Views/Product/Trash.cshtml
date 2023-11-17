@@ -1,9 +1,11 @@
-﻿@model IEnumerable<MyClass.Model.Products>
-
+﻿﻿@model IEnumerable<MyClass.Model.Products>
 @{
-    ViewBag.Title = "Trang chu san pham";
+    ViewBag.Title = "Thung rac ";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+<h2>Trash</h2>
+
 @section header {
     <link href="~/Public/css/cdn.datatables.net_1.13.6_css_jquery.dataTables.min.css" rel="stylesheet" />
 }
@@ -27,11 +29,11 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <strong class="text-danger">DANH MUC SAN PHAM</strong>
+                            <strong class="text-danger">THUNG RAC SAN PHAM</strong>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a href="@Url.Action("Create","Product")" class="btn-sm btn-success"><i class="fa fa-plus"> Thêm</i></a>
-                            <a href="@Url.Action("Trash","Product")" class="btn-sm btn-danger"><i class="fa fa-trash"> Thùng rác</i></a>
+                            <a href="@Url.Action("Index","Product")" class="btn-sm btn-success"><i class="fa fa-plus"> quay lai</i></a>
+                           
                         </div>
                     </div>
                 </div>
@@ -48,6 +50,7 @@
                                 <th>@Html.DisplayNameFor(model => model.Price)</th>
                                 <th>@Html.DisplayNameFor(model => model.Amout)</th>
                                 <th>@Html.DisplayNameFor(model => model.Image)</th>
+                                <th>Chuc nang</th>
 
                             </tr>
                         </thead>
@@ -59,22 +62,14 @@
                                     <td>@Html.DisplayFor(modelItem => item.Id)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                     <td>@Html.DisplayFor(modelItem => item.CatID)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.SupplierID)</td>                                   
+                                    <td>@Html.DisplayFor(modelItem => item.SupplierID)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Price)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Amout)</td>
                                     <td><img src="~/Public/img/product/@item.Image" alt="Image" class="img-fluid" /></td>
                                     <td>
-                                        @if (item.Status == 1)
-                                        {
-                                            <a href="@Url.Action("Status","Product", new { id = item.Id })" class="btn-sm btn-success"><i class="fa fa-toggle-on"></i></a>
-                                        }
-                                        else
-                                        {
-                                            <a href="@Url.Action("Status","Product", new { id = item.Id })" class="btn-sm btn-danger"><i class="fa fa-toggle-off"></i></a>
-                                        }
-                                        <a href="@Url.Action("Edit","Product", new { id = item.Id })" class="btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                        <a href="@Url.Action("Details","Product", new { id = item.Id })" class="btn-sm btn-info"><i class="fa fa-eye"></i></a>
-                                        <a href="@Url.Action("DelTrash","Product", new { id = item.Id })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                       
+                                        <a href="@Url.Action("Undo","Product", new { id = item.Id })" class="btn-sm btn-primary"><i class="fa fa-undo"></i></a>                                       
+                                        <a href="@Url.Action("Delete","Product", new { id = item.Id })" class="btn-sm btn-danger"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             }
