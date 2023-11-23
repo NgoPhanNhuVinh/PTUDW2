@@ -132,9 +132,12 @@ namespace _63CNTT4N2.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //xu ly tu dong mot so truong
-               
-                //Order
+                //xu ly tu dong cho cac truong: CreateAt/By, UpdateAt/By, Slug, OrderBy
+
+                //Xu ly tu dong cho: UpdateAt
+                suppliers.UpdateAt = DateTime.Now;
+
+                //Xu ly tu dong cho: Order
                 if (suppliers.Order == null)
                 {
                     suppliers.Order = 1;
@@ -143,11 +146,8 @@ namespace _63CNTT4N2.Areas.Admin.Controllers
                 {
                     suppliers.Order += 1;
                 }
-                //UpdateAt
-                suppliers.UpdateAt = DateTime.Now;
-                //UpdateBy
-                suppliers.UpdateBy = Convert.ToInt32(Session["UserID"]);
-                //slug
+
+                //Xu ly tu dong cho: Slug
                 suppliers.Slug = XString.Str_Slug(suppliers.Name);
 
                 //xu ly cho phan upload hinh anh
@@ -179,8 +179,8 @@ namespace _63CNTT4N2.Areas.Admin.Controllers
 
                 //cap nhat mau tin vao DB
                 suppliersDAO.Update(suppliers);
-                //hien thi thong bao thanh cong
-                TempData["message"] = new XMessage("success", "Cập nhật thông tin thành công");
+                //thong bao thanh cong
+                TempData["message"] = new XMessage("success", "Cập nhật mẩu tin thành công");
                 return RedirectToAction("Index");
             }
             ViewBag.OrderList = new SelectList(suppliersDAO.getList("Index"), "Order", "Name");
